@@ -1,9 +1,12 @@
 Package: backupsystem
-Version: 0.0.1
+Version: 0.0.2
 Section: utils
 Priority: optional
 Architecture: all
 Depends: pv, zip, unzip
+Suggests: nano
 Maintainer: Sardinha CN <sar.anime.mania@gmail.com>
-Description: BackupSystem é um utilitário de backup via terminal para Linux.
- Permite fazer backups normais, compactados, descompactar, visualizar logs, e atualizar o sistema de forma simples.
+Homepage: https://github.com/SardinhaCN/BackupSystem
+Description: Ferramenta de backup simples para terminal no Linux.
+ BackupSystem permite fazer backups normais, compactados, descompactar, visualizar logs
+ e atualizar o sistema de forma simples e eficiente.
