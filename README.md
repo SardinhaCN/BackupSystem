@@ -10,6 +10,29 @@ Baixe o arquivo `.deb` e execute:
 sudo dpkg -i BackupSystem.deb
 ```
 
+| Programa | Função                                               | Instalação no Ubuntu     |
+| -------- | ---------------------------------------------------- | ------------------------ |
+| `pv`     | Barra de progresso na cópia de arquivos e compressão | `sudo apt install pv`    |
+| `zip`    | Compactar arquivos no modo `-zip`                    | `sudo apt install zip`   |
+| `unzip`  | Descompactar arquivos no modo `-unzip`               | `sudo apt install unzip` |
+
+
+✅ Dependências padrão (geralmente já instaladas)
+Esses comandos são padrões em quase todas as distribuições Linux e não costumam precisar de instalação:
+
+bash (shell)
+
+find (localiza arquivos)
+
+du (verificar tamanho)
+
+df (verificar espaço livre)
+
+mkdir, cp, rm, read, awk, cut, echo, cat (comandos GNU coreutils e util-linux)
+
+✔️ Estes geralmente já estão disponíveis no Ubuntu, Debian e derivados.
+
+
 | Comando                               | Descrição                                                       |
 | ------------------------------------- | --------------------------------------------------------------- |
 | `systemb backup <origem> <destino>`   | Backup normal                                                   |
