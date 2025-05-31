@@ -20,6 +20,9 @@ function show_help() {
     echo -e "  ❌  \e[1;36msystemb uninstall\e[0m"
     echo -e "      Remove completamente o BackupSystem do sistema"
     echo
+    echo -e "  💽  \e[1;36msystemb space\e[0m [<caminho>]"
+    echo -e "      Mostra espaço no disco raiz e no caminho informado (ou /mnt/Backup por padrão)"
+    echo
     echo -e "  📑  \e[1;36msystemb log\e[0m"
     echo -e "      Exibe os logs no terminal"
     echo -e "  📑  \e[1;36msystemb log nano\e[0m"
@@ -164,6 +167,24 @@ function update_system() {
     done
 }
 
+function show_space_info() {
+    local dest="${1:-/mnt/Backup}"  # Se não passar argumento, usa /mnt/Backup como padrão
+
+    echo -e "\n\e[1;34m=== Informações de Espaço ===\e[0m"
+
+    echo -e "\e[1;33m📦 Espaço no Disco Raiz (/):\e[0m"
+    df -h / | awk 'NR==2 {print "Usado: "$3" | Disponível: "$4" | Total: "$2}'
+
+    echo -e "\n\e[1;33m📦 Espaço no Disco de Backup ($dest):\e[0m"
+    if mountpoint -q "$dest" || [ -d "$dest" ]; then
+        df -h "$dest" | awk 'NR==2 {print "Usado: "$3" | Disponível: "$4" | Total: "$2}'
+    else
+        echo -e "\e[1;31m❌ O destino $dest não está montado ou não existe.\e[0m"
+    fi
+
+    echo -e "\n\e[1;34m=============================\e[0m\n"
+}
+
 function show_log() {
     case "$1" in
         nano)
@@ -207,11 +228,14 @@ case "$1" in
     update)
         update_system
         ;;
+    space)
+        shift
+        show_space_info "$@"
+        ;;
     log)
-    shift
-    show_log "$@"
-    ;;
-
+        shift
+        show_log "$@"
+        ;;
     help|--help|-h|"")
         show_help
         ;;
