@@ -196,8 +196,6 @@ function show_log() {
     esac
 }
 
-
-
 case "$1" in
     backup)
         shift
