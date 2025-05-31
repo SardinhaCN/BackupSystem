@@ -78,6 +78,9 @@ if [ "$OPTION" == "-zip" ]; then
     log "Compactando em $DESTINO/$ZIP_NAME..."
     zip -r "$DESTINO/$ZIP_NAME" "$ORIGEM" | tee -a "$LOG_FILE"
     log "✅ Backup compactado concluído."
+    backup_size=$(du -sh "$zip_file" | awk '{print $1}')
+    echo -e "\e[1;32m📦 Tamanho do backup zipado: $backup_size\e[0m"
+    log "Tamanho do backup zipado: $backup_size"
     exit 0
 fi
 
@@ -93,6 +96,9 @@ if [ "$OPTION" == "-unzip" ]; then
     log "Descompactando $ZIP_FILE em $DESTINO..."
     unzip "$ZIP_FILE" -d "$DESTINO" | tee -a "$LOG_FILE"
     log "✅ Descompactação concluída."
+    backup_size=$(du -sh "$dest" | awk '{print $1}')
+    echo -e "\e[1;32m📦 Tamanho após descompressão: $backup_size\e[0m"
+    log "Tamanho após descompressão: $backup_size"
     exit 0
 fi
 
