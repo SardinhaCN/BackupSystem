@@ -23,6 +23,24 @@ log() {
     echo "$(date '+%Y-%m-%d %H:%M:%S') | $1" | tee -a "$LOG_FILE"
 }
 
+function show_space_info() {
+    local dest="/mnt/Backup"
+
+    echo -e "\n\e[1;34m=== Informações de Espaço ===\e[0m"
+
+    echo -e "\e[1;33m📦 Espaço no Disco Raiz (/):\e[0m"
+    df -h / | awk 'NR==2 {print "Usado: "$3" | Disponível: "$4" | Total: "$2}'
+
+    echo -e "\n\e[1;33m📦 Espaço no Disco de Backup (/mnt/Backup):\e[0m"
+    if mountpoint -q "$dest"; then
+        df -h "$dest" | awk 'NR==2 {print "Usado: "$3" | Disponível: "$4" | Total: "$2}'
+    else
+        echo -e "\e[1;31m❌ O destino $dest não está montado.\e[0m"
+    fi
+
+    echo -e "\n\e[1;34m=============================\e[0m\n"
+}
+
 # Validação de parâmetros
 if [ -z "$ORIGEM" ] || [ -z "$DESTINO" ]; then
     echo "❌ Uso: systemb backup [-zip|-unzip] <origem> <destino>"
@@ -98,3 +116,6 @@ done
 
 echo ""
 log "✅ Backup normal concluído."
+backup_size=$(du -sh "$dest" | awk '{print $1}')
+echo -e "\e[1;32m📦 Tamanho do backup: $backup_size\e[0m"
+log "Tamanho do backup: $backup_size"
