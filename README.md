@@ -8,6 +8,7 @@ Baixe o arquivo `.deb` e execute:
 
 ```bash
 sudo dpkg -i BackupSystem.deb
+```
 
 | Comando                               | Descrição                                                       |
 | ------------------------------------- | --------------------------------------------------------------- |
