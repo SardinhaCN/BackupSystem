@@ -45,10 +45,9 @@ mkdir, cp, rm, read, awk, cut, echo, cat (comandos GNU coreutils e util-linux)
 | `systemb uninstall`                   | Desinstala o BackupSystem                                       |
 | `systemb help`                        | Mostra o menu de ajuda                                          |
 
-<iframe width="640" height="480" src="//mxdrop.to/e/el1qq1loc40qee" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
+[video usando comandos no terminal](https://mxdrop.to/e/el1qq1loc40qee)
 
-<iframe width="640" height="480" src="//mxdrop.to/e/z1kllk06ugo0xe" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
-
+[video mostrando o resultado](https://mxdrop.to/e/z1kllk06ugo0xe)
 
 🗂️ Estrutura dos arquivos
 
