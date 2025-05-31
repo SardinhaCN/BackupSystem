@@ -45,6 +45,18 @@ mkdir, cp, rm, read, awk, cut, echo, cat (comandos GNU coreutils e util-linux)
 | `systemb uninstall`                   | Desinstala o BackupSystem                                       |
 | `systemb help`                        | Mostra o menu de ajuda                                          |
 
+<video width="600" controls>
+  <source src="https://raw.githubusercontent.com/SardinhaCN/BackupSystem/refs/heads/main/Video/comando%20no%20terminal.mp4" type="video/mp4">
+  Seu navegador não suporta o elemento de vídeo.
+</video>
+
+<video width="600" controls>
+  <source src="https://raw.githubusercontent.com/SardinhaCN/BackupSystem/refs/heads/main/Video/comando%20no%20terminal.mp4" type="video/mp4">
+  Seu navegador não suporta o elemento de vídeo.
+</video>
+
+
+
 🗂️ Estrutura dos arquivos
 
 Binário: /usr/local/bin/systemb
