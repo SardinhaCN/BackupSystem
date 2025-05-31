@@ -2,6 +2,8 @@
 
 BackupSystem é uma ferramenta de backup via terminal para Ubuntu Server.
 
+Esse projeto foi feito para resolver um problema de backup que no CasaOS nao tem!
+
 ## 🚀 Instalação
 
 Baixe o arquivo `.deb` e execute:
