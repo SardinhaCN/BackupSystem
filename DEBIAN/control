@@ -1,0 +1,7 @@
+Package: backupsystem
+Version: 0.0.2
+Section: utils
+Priority: optional
+Architecture: all
+Maintainer: Sardinha CN <sar.anime.mania@gmail.com>
+Description: Sistema de backup simples com compressão, barra de progresso e logs.
